@@ -12,4 +12,6 @@ RUN apt-get update -q -q && \
  export "NODE=$(find /.meteor/ -path '*bin/node' | grep '/.meteor/packages/meteor-tool/' | sort | head -n 1)" && \
  ln -sf ${NODE} /usr/local/bin/node && \
  ln -sf "$(dirname "$NODE")/npm" /usr/local/bin/npm && \
+ echo 'en_US.UTF-8 UTF-8' >> /etc/locale.gen && \
+ dpkg-reconfigure locales && \
  apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* ~/.cache ~/.npm
