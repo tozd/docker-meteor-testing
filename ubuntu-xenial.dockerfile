@@ -18,7 +18,8 @@ RUN apt-get update -q -q && \
  echo locales locales/default_environment_locale select en_US.UTF-8 | debconf-set-selections && \
  dpkg-reconfigure locales && \
  apt-get --yes --force-yes install chromium-chromedriver && \
- npm install --unsafe-perm -g selenium-webdriver@2.47.0 mkdirp && \
+ cd \ && \
+ npm install --unsafe-perm selenium-webdriver@2.47.0 mkdirp && \
  apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* ~/.cache ~/.npm
 
 ENV PATH="${PATH}:/usr/lib/chromium-browser"
