@@ -17,7 +17,7 @@ RUN apt-get update -q -q && \
  echo locales locales/locales_to_be_generated multiselect en_US.UTF-8 UTF-8 | debconf-set-selections && \
  echo locales locales/default_environment_locale select en_US.UTF-8 | debconf-set-selections && \
  dpkg-reconfigure locales && \
- apt-get --yes --force-yes install chromium-chromedriver && \
+ apt-get --yes --force-yes install chromium-chromedriver xvfb && \
  cd / && \
  npm install --unsafe-perm selenium-webdriver@2.47.0 mkdirp && \
  apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* ~/.cache ~/.npm
