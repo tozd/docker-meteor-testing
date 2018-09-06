@@ -18,7 +18,7 @@ RUN apt-get update -q -q && \
  echo locales locales/default_environment_locale select en_US.UTF-8 | debconf-set-selections && \
  dpkg-reconfigure locales && \
  apt-get --yes --force-yes install chromium-chromedriver xvfb psmisc && \
- apt-get --yes --force-yes xvfb libgtk2.0-0 libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 && \
+ apt-get --yes --force-yes install xvfb libgtk2.0-0 libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 && \
  cd / && \
  npm install --unsafe-perm selenium-webdriver@2.47.0 mkdirp && \
  apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* ~/.cache ~/.npm
