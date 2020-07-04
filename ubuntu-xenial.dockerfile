@@ -2,10 +2,12 @@ FROM tozd/base:ubuntu-xenial
 
 ENV HOME /
 
+ARG METEOR_VERSION
+
 RUN apt-get update -q -q && \
  apt-get --yes --force-yes install curl python build-essential git && \
  export METEOR_ALLOW_SUPERUSER=true && \
- curl https://install.meteor.com/ | sed s/--progress-bar/-sL/g | sh && \
+ curl https://install.meteor.com/${METEOR_VERSION:+?release=${METEOR_VERSION}} | sed s/--progress-bar/-sL/g | sh && \
  apt-get --yes --force-yes purge curl && \
  apt-get --yes --force-yes autoremove && \
  adduser --system --group meteor --home / && \
