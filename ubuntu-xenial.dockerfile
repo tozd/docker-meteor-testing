@@ -14,11 +14,6 @@ RUN apt-get update -q -q && \
  export "NODE=$(find /.meteor/ -path '*bin/node' | grep '/.meteor/packages/meteor-tool/' | sort | head -n 1)" && \
  ln -sf ${NODE} /usr/local/bin/node && \
  ln -sf "$(dirname "$NODE")/npm" /usr/local/bin/npm && \
- locale-gen --no-purge en_US.UTF-8 && \
- update-locale LANG=en_US.UTF-8 && \
- echo locales locales/locales_to_be_generated multiselect en_US.UTF-8 UTF-8 | debconf-set-selections && \
- echo locales locales/default_environment_locale select en_US.UTF-8 | debconf-set-selections && \
- dpkg-reconfigure locales && \
  apt-get --yes --force-yes install chromium-chromedriver xvfb psmisc && \
  apt-get --yes --force-yes install xvfb libgtk2.0-0 libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 && \
  cd / && \
