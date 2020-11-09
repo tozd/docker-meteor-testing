@@ -1,4 +1,4 @@
-FROM registry.gitlab.com/tozd/docker/base:ubuntu-xenial
+FROM registry.gitlab.com/tozd/docker/base:ubuntu-bionic
 
 ENV HOME /
 ENV METEOR_NO_RELEASE_CHECK 1
