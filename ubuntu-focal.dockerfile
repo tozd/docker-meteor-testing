@@ -20,7 +20,7 @@ RUN apt-get update -q -q && \
 
 RUN apt-get update -q -q && \
  apt-get --yes --force-yes install chromium-chromedriver xvfb psmisc && \
- apt-get --yes --force-yes install xvfb libgtk2.0-0 libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 && \
+ apt-get --yes --force-yes install xauth xvfb libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 && \
  cd / && \
  npm install --unsafe-perm selenium-webdriver@2.47.0 mkdirp && \
  apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* ~/.cache ~/.npm
