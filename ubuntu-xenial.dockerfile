@@ -1,4 +1,4 @@
-FROM tozd/base:ubuntu-xenial
+FROM registry.gitlab.com/tozd/docker/base:ubuntu-xenial
 
 ENV HOME /
 
