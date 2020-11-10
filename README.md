@@ -12,7 +12,7 @@ Available as:
 A Docker image which includes everything necessary to test [Meteor](https://www.meteor.com/) apps in CI:
 
 * All Meteor versions, one Docker image per version, for reproducible builds.
-* Chromium and its chromedriver.
+* A fixed version of Chromium and its chromedriver (72.0.3626.121).
 * Xvfb.
 * Selenium webdriver 3.6.0.
 

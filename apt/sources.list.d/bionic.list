@@ -1,3 +1,0 @@
-# Chromium can be found in universe.
-deb http://archive.ubuntu.com/ubuntu/ bionic-updates universe
-deb http://security.ubuntu.com/ubuntu/ bionic-security universe
