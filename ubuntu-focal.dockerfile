@@ -2,13 +2,13 @@ FROM registry.gitlab.com/tozd/docker/base:ubuntu-focal
 
 ENV HOME /
 ENV METEOR_NO_RELEASE_CHECK 1
+ENV METEOR_ALLOW_SUPERUSER true
 
 ARG METEOR_VERSION
 
 # Keep this layer in sync with tozd/meteor.
 RUN apt-get update -q -q && \
  apt-get --yes --force-yes install curl python build-essential git && \
- export METEOR_ALLOW_SUPERUSER=true && \
  curl https://install.meteor.com/${METEOR_VERSION:+?release=${METEOR_VERSION}} | sed s/--progress-bar/-sL/g | sh && \
  apt-get --yes --force-yes purge curl && \
  apt-get --yes --force-yes autoremove && \
