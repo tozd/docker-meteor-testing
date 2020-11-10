@@ -18,11 +18,16 @@ RUN apt-get update -q -q && \
  ln -sf "$(dirname "$NODE")/npm" /usr/local/bin/npm && \
  apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* ~/.cache ~/.npm
 
+# On Focal, Ubuntu uses Snap Chromium packages. So we add Bionic repositories and configure
+# for Chromium to be installed from them.
+COPY ./apt /etc/apt
+
 RUN apt-get update -q -q && \
- apt-get --yes --force-yes install chromium-chromedriver xvfb psmisc && \
- apt-get --yes --force-yes install xauth xvfb libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 && \
+ apt-get --yes --force-yes install chromium-chromedriver chromium-codecs-ffmpeg-extra chromium-browser \
+  psmisc xauth xvfb libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libgconf-2-4 \
+  libnss3 libxss1 libasound2 libxtst6 && \
  cd / && \
- npm install --unsafe-perm selenium-webdriver@2.47.0 mkdirp && \
+ npm install --unsafe-perm selenium-webdriver@3.6.0 mkdirp && \
  apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* ~/.cache ~/.npm
 
 ENV PATH="${PATH}:/usr/lib/chromium-browser"

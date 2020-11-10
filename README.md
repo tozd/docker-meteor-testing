@@ -11,10 +11,10 @@ Available as:
 
 A Docker image which includes everything necessary to test [Meteor](https://www.meteor.com/) apps in CI:
 
-* Latest version of Meteor itself.
+* All Meteor versions, one Docker image per version, for reproducible builds.
 * Chromium and its chromedriver.
 * Xvfb.
-* Selenium webdriver.
+* Selenium webdriver 3.6.0.
 
 Simply use it together with your Meteor app and then run your
 `meteor test --full-app` or any other testing command.

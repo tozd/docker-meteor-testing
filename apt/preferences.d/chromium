@@ -1,0 +1,11 @@
+Package: chromium-chromedriver
+Pin: release n=bionic
+Pin-Priority: 900
+
+Package: chromium-codecs-ffmpeg-extra
+Pin: release n=bionic
+Pin-Priority: 900
+
+Package: chromium-browser
+Pin: release n=bionic
+Pin-Priority: 900
