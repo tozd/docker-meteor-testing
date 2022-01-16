@@ -28,7 +28,10 @@ RUN apt-get update -q -q && \
  wget http://launchpadlibrarian.net/413897612/chromium-chromedriver_72.0.3626.121-0ubuntu0.16.04.1_amd64.deb && \
  dpkg -i chromium-browser_72.0.3626.121-0ubuntu0.16.04.1_amd64.deb chromium-codecs-ffmpeg-extra_72.0.3626.121-0ubuntu0.16.04.1_amd64.deb chromium-chromedriver_72.0.3626.121-0ubuntu0.16.04.1_amd64.deb && \
  rm -f *.deb && \
- npm install --unsafe-perm selenium-webdriver@3.6.0 mkdirp && \
+ npm install --unsafe-perm --allow-root selenium-webdriver@3.6.0 puppeteer-core@1.11.0 mkdirp && \
  apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* ~/.cache ~/.npm
 
 ENV PATH="${PATH}:/usr/lib/chromium-browser"
+
+COPY ./run-test-packages.sh /
+COPY ./puppeteerRunner.js /
