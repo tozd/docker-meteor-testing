@@ -1,3 +1,5 @@
+// Based on: https://github.com/meteor/meteor/blob/devel/packages/test-in-console/puppeteerRunner.js
+
 const puppeteer = require('puppeteer-core');
 
 async function runNextUrl(browser) {
