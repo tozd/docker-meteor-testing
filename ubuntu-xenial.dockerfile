@@ -1,7 +1,7 @@
 FROM registry.gitlab.com/tozd/docker/base:ubuntu-xenial
 
 ENV HOME /
-ENV METEOR_WAREHOUSE_DIR /
+ENV METEOR_WAREHOUSE_DIR /.meteor
 ENV METEOR_NO_RELEASE_CHECK 1
 ENV METEOR_ALLOW_SUPERUSER true
 
