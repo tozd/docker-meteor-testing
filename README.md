@@ -14,8 +14,9 @@ A Docker image which includes everything necessary to test [Meteor](https://www.
 * All Meteor versions, one Docker image per version, for reproducible builds.
 * A fixed version of Chromium and its chromedriver (72.0.3626.121).
 * Xvfb.
-* Selenium webdriver 3.6.0, compatible with installed chromedriver.
-* `puppeteer-core` 1.11.0, compatible with installed Chromium.
+* From Meteor 1.6 on, it also includes:
+  * Selenium webdriver 3.6.0, compatible with installed chromedriver.
+  * `puppeteer-core` 1.11.0, compatible with installed Chromium.
 
 Simply use it together with your Meteor app and then run your
 `meteor test --full-app` or any other testing command.
