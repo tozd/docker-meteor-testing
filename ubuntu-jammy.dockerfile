@@ -1,4 +1,4 @@
-FROM registry.gitlab.com/tozd/docker/base:ubuntu-focal
+FROM registry.gitlab.com/tozd/docker/base:ubuntu-jammy
 
 ENV HOME /
 ENV METEOR_WAREHOUSE_DIR /.meteor
