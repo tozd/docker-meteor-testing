@@ -9,7 +9,7 @@ ARG METEOR_VERSION
 
 # Keep this layer in sync with tozd/meteor.
 RUN apt-get update -q -q && \
-  apt-get --yes --force-yes install curl python build-essential git && \
+  apt-get --yes --force-yes install curl python2 build-essential git && \
   curl https://install.meteor.com/?release=${METEOR_VERSION} | sed s/--progress-bar/-sL/g | sh && \
   apt-get --yes --force-yes purge curl && \
   apt-get --yes --force-yes autoremove && \
