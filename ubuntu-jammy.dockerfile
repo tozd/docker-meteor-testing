@@ -22,7 +22,7 @@ RUN apt-get update -q -q && \
 RUN apt-get update -q -q && \
   apt-get --yes --force-yes install wget \
   psmisc xauth xvfb libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libgconf-2-4 \
-  libnss3 libxss1 libasound2 libxtst6 xdg-utils && \
+  libnss3 libxss1 libasound2 libxtst6 xdg-utils libgdk-pixbuf2.0-0 && \
   cd / && \
   wget http://launchpadlibrarian.net/413897613/chromium-codecs-ffmpeg-extra_72.0.3626.121-0ubuntu0.16.04.1_amd64.deb && \
   wget http://launchpadlibrarian.net/413897611/chromium-browser_72.0.3626.121-0ubuntu0.16.04.1_amd64.deb && \
