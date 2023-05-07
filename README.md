@@ -38,3 +38,8 @@ Simply use it together with your Meteor app and then run your
 
 There is also a shell script `/run-test-packages.sh` which runs `meteor test-packages` for the current
 working directory using Chromium and puppeteer to run both client and server package tests.
+
+## GitHub mirror
+
+There is also a [read-only GitHub mirror available](https://github.com/tozd/docker-meteor-testing),
+if you need to fork the project there.
