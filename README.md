@@ -1,5 +1,7 @@
 # tozd/meteor-testing
 
+**DEPRECATED: Images are not maintained and not regularly updated anymore.**
+
 <https://gitlab.com/tozd/docker/meteor-testing>
 
 Available as:
